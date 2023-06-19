@@ -4,15 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(85, 85, 113);
+    padding: 20px;
+}
+
 .bloq {
     pointer-events: none;
     user-select: none;
-}
-
-.container {
-    position: absolute;
-    padding-left: 10%;
-    padding-right: 10%;
 }
 
 .game-board {
@@ -24,6 +23,10 @@
     position: relative;
     overflow: hidden;
     background: linear-gradient(rgb(59, 72, 212), rgb(148, 148, 202));
+}
+
+.display {
+    display: none;
 }
 
 .pipe {
@@ -52,7 +55,7 @@
     animation: clouds-animation 10s infinite linear;
 }
 
-#score {
+.score {
     position: fixed;
     top: 50px;
     right: 50px;
@@ -81,8 +84,22 @@
 
 }
 
-.play-again.hover {
-    background-color: brown;
+.div-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+}
+
+.button-play {
+    border-radius: 3px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 30px;
+    background-color: gold;
+    font-size: 30px;
+    border-radius: 10%;
+
+
 }
 
 .footer {

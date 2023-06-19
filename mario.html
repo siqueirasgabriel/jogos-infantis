@@ -14,15 +14,24 @@
 
 <body>
     <div class="game-board">
-        <img src="img/mario/clouds.png" class="clouds bloq">
-        <img src="img/mario/mario.gif" class="mario bloq">
-        <img src="img/mario/pipe.png" class="pipe bloq">
+
+
+
+        <img src="img/mario/clouds.png" class="clouds bloq display ">
+        <img src="img/mario/mario.gif" class="mario bloq display">
+        <img src="img/mario/pipe.png" class="pipe bloq display">
+
         <div class="game-over">
             <img src="img/mario/gameover.gif" class="bloq">
             <button onclick="window.location.reload();" class="play-again">Jogar de Novo</button>
 
         </div>
-        <div class="bloq" id="score">Score: <span id="scoreValue">0</span></div>
+        <div class="div-play">
+            <button onclick="play(),hideButton();" id="button-play" class="button-play">Jogar</button>
+        </div>
+    </div>
+    <div class="score bloq display" id="score">Score: <span id="scoreValue">0</span>
+    </div>
 
 
     </div>
