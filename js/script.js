@@ -32,45 +32,43 @@ function atualizarScore() {
     scoreElement.textContent = score;
 }
 const loop = setInterval(() => {
-    const intervalId = setInterval(() => {
-
-        const pipePosition = pipe.offsetLeft;
-        const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
-        const cloudsPosition = +window.getComputedStyle(clouds).right.replace('px', '');
 
 
-        if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
-
-            pipe.style.animation = "none";
-            pipe.style.left = `${pipePosition}px`;
-
-            mario.style.animation = "none";
-            mario.style.bottom = `${marioPosition}px`;
-
-            mario.src = 'img/mario/game-over.png';
-            mario.style.width = '70px';
-            mario.style.marginLeft = '50px';
-
-            clouds.style.animation = "none";
-            clouds.style.right = `${cloudsPosition}px`;
-
-            document.querySelector('.game-over').style.display = 'block';
+    const pipePosition = pipe.offsetLeft;
+    const marioPosition = +window.getComputedStyle(mario).bottom.replace('px', '');
+    const cloudsPosition = +window.getComputedStyle(clouds).right.replace('px', '');
 
 
-            clearInterval(intervalId);
-            clearInterval(loop);
-        }
+    if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 80) {
 
-        else {
+        pipe.style.animation = "none";
+        pipe.style.left = `${pipePosition}px`;
+
+        mario.style.animation = "none";
+        mario.style.bottom = `${marioPosition}px`;
+
+        mario.src = 'img/mario/game-over.png';
+        mario.style.width = '70px';
+        mario.style.marginLeft = '50px';
+
+        clouds.style.animation = "none";
+        clouds.style.right = `${cloudsPosition}px`;
+
+        document.querySelector('.game-over').style.display = 'block';
 
 
-            // Exemplo de incrementar o score
-            score += 1;
-            atualizarScore();
-        }
+        clearInterval(intervalId);
+        clearInterval(loop);
+    }
 
-    }, 10);
+
 }, 10);
+
+const intervalId = setInterval(() => {
+    // Exemplo de incrementar o score
+    score += 10;
+    atualizarScore();
+}, 900);
 
 document.addEventListener('keydown', event => {
     if (event.key === " " || event.key === "ArrowUp") {
